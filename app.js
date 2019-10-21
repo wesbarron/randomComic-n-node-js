@@ -10,13 +10,24 @@ var port = process.env.PORT || 3000;
 app.set('views', path.join(__dirname, 'views'));
 app.set("view engine", 'ejs');
 app.use(bodyParser.urlencoded({ encoded: true}));
-//app.use(express.static("public"));
+app.use(express.static("public"));
+app.use(express.json());
 
+https.get('https://xkcd.com/info.0.json', (res) => {
+  console.log('statusCode:', res.statusCode);
+  console.log('headers:', res.headers);
 
+  res.on('data', (d) => {
+    process.stdout.write(d);
+  });
+
+}).on('error', (e) => {
+  console.error(e);
+});
 
 app.get('/', function(req, res){
     res.send('hello world');
-    res.render("index", {});
+    //res.render("index", {});
 });
 
 _EXTERNAL_URL = "http://xkcd.com/info.0.json";
