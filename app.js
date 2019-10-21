@@ -65,8 +65,7 @@ http.createServer((req, res) => {
 
 app.post('/originalComic', function(req, res){
 
-   res.send(getAPICurrentComic);
-   res.send(callAPIrandomComicHTTP);
+
 
 });
 
