@@ -1,6 +1,20 @@
 var apiCallFromRequest = require('./Request');
 var apiCallFromNode = require('./NodeJsCall');
 
+var path = require('path');
+var express = require("express");
+var bodyParser = require("body-parser");
+var app = express();
+var port = process.env.PORT || 3000;
+
+app.set('views', path.join(__dirname, 'views'));
+app.set("view engine", 'ejs');
+app.use(bodyParser.urlencoded({ encoded: true}));
+app.use(express.static("public"));
+
+app.get('/', function(req, res){
+    res.render("index", {});
+
 var http = require('http');
 
 http.createServer((req, res) => {
@@ -16,6 +30,9 @@ http.createServer((req, res) => {
             res.end();
         });
     }
+});
 
-}).listen(3000);
-console.log("service running on port 3000...");
+    http.createServer(app).listen(port, function(){
+
+});
+
