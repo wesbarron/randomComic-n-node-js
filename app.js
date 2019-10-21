@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ encoded: true}));
 app.get('/', function(req, res){
     res.render("index", {});
 });
-/*
+
 _EXTERNAL_URL = "http://xkcd.com/info.0.json";
 
 var getAPICurrentComic = (callback) => {
@@ -46,7 +46,7 @@ var callAPIrandomComicHTTP = (callback) => {
     }).on("error", (err) => {
         console.log("Error: " + err.message);
     });
-}*/
+}
 
 
 
