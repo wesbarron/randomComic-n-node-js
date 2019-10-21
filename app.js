@@ -49,7 +49,7 @@ var callAPIrandomComicHTTP = (callback) => {
 }
 
 app.post('/originalComic', function(req, res){
-    res.json(getAPICurrentComic);
+    res.send(JSON.stringify(getAPICurrentComic));
 
     res.redirect('/');
 });
