@@ -73,7 +73,7 @@ app.post('/originalComic', function(req, res){
 
 });
 
-    http.createServer(app).listen(port, function(){
+    https.createServer(app).listen(port, function(){
 
 });
 
