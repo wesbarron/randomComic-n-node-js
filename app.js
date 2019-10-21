@@ -1,4 +1,4 @@
-var https = require('https');
+//var https = require('https');
 var http = require('http');
 //var request = require('request');
 var path = require('path');
@@ -67,13 +67,8 @@ http.createServer((req, res) => {
 });*/
 
 
-app.post('/originalComic', function(req, res){
 
-
-
-});
-
-    https.createServer(app).listen(port, function(){
+http.createServer(app).listen(port, function(){
 
 });
 
