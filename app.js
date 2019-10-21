@@ -14,6 +14,7 @@ app.use(express.static("public"));
 
 app.get('/', function(req, res){
     res.render("index", {});
+});
 
 var http = require('http');
 /*
@@ -46,4 +47,3 @@ app.post('/originalComic', function(req, res){
 
 });
 
-});
