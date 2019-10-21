@@ -1,6 +1,5 @@
-var apiCallFromRequest = require('./Request');
-var apiCallFromNode = require('./NodeJsCall');
 
+var request = require('request');
 var path = require('path');
 var express = require("express");
 var bodyParser = require("body-parser");
@@ -15,6 +14,36 @@ app.use(express.static("public"));
 app.get('/', function(req, res){
     res.render("index", {});
 });
+
+_EXTERNAL_URL = "http://xkcd.com/info.0.json";
+
+var getAPICurrentComic = (callback) => {
+    request(_EXTERNAL_URL, {json: true}, (err, res, body) => {
+        if(err) {
+            return callback(err);
+        }
+        return callback(body);
+    });
+}
+
+var callAPIrandomComicHTTP = (callback) => {
+    https.get(_EXTERNAL_URL, (resp) => {
+        let data = '';
+
+    //Data has been recieved.
+    resp.on('data', (chunk) => {
+        data += chunk;
+    });
+
+    //The whole response has been recieved. Print result.
+    resp.on('end', () => {
+        return callback(data);
+    });
+
+    }).on("error", (err) => {
+        console.log("Error: " + err.message);
+    });
+}
 
 var http = require('http');
 /*
@@ -36,10 +65,8 @@ http.createServer((req, res) => {
 
 app.post('/originalComic', function(req, res){
 
-    apiCallFromRequest.callApi(function(response){
-        res.write(JSON.stringify(response));
-         res.end();
-    });
+   res.send(getAPICurrentComic);
+   res.send(callAPIrandomComicHTTP);
 
 });
 
