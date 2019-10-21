@@ -1,0 +1,27 @@
+{
+  "name": "randomcomic-n-node",
+  "version": "1.0.0",
+  "description": "random comic api",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wesbarron/randomComic-n-node-js.git"
+  },
+  "author": "Wes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wesbarron/randomComic-n-node-js/issues"
+  },
+  "homepage": "https://github.com/wesbarron/randomComic-n-node-js#readme",
+  "engine": {
+      "node": "10.x"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1"
+  }
+}
