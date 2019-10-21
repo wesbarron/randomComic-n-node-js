@@ -16,7 +16,7 @@
     "url": "https://github.com/wesbarron/randomComic-n-node-js/issues"
   },
   "homepage": "https://github.com/wesbarron/randomComic-n-node-js#readme",
-  "engine": {
+  "engines": {
     "node": "10.x"
   },
   "dependencies": {
