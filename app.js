@@ -16,38 +16,31 @@ app.use(express.json());
 
 
 app.get('/', function(req, res){
-    res.send('Hello');
+    var api_response = '';
+
+    var options = {
+        host: 'xkcd.com',
+        port: 80,
+        path: '/info.0.json',
+        method: 'GET'
+    }
+
+    callback = function(response){
+        response.on("data", function(chunk){
+            api_response+=chunk;
+        });
+
+        response.on("end", function(){
+            console.log("api response is: "+api_response);
+        });
+    }
+
+    var req = http.request(options, callback);
+    req.end();
+    res.send("api response is: " + api_response);
 });
 
-_EXTERNAL_URL = "http://xkcd.com/info.0.json";
 
-var getAPICurrentComic = (callback) => {
-    request(_EXTERNAL_URL, {json: true}, (err, res, body) => {
-        if(err) {
-            return callback(err);
-        }
-        return callback(body);
-    });
-}
-
-var callAPIrandomComicHTTP = (callback) => {
-    https.get(_EXTERNAL_URL, (resp) => {
-        let data = '';
-
-    //Data has been recieved.
-    resp.on('data', (chunk) => {
-        data += chunk;
-    });
-
-    //The whole response has been recieved. Print result.
-    resp.on('end', () => {
-        return callback(data);
-    });
-
-    }).on("error", (err) => {
-        console.log("Error: " + err.message);
-    });
-}
 
 app.post('/originalComic', function(req, res){
     var data = JSON.parse(getAPICurrentComic);
