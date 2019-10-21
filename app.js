@@ -16,7 +16,7 @@ app.get('/', function(req, res){
     res.render("index", {});
 
 var http = require('http');
-
+/*
 http.createServer((req, res) => {
     if(req.url === "/request"){
         apiCallFromRequest.callApi(function(response){
@@ -30,6 +30,16 @@ http.createServer((req, res) => {
             res.end();
         });
     }
+});*/
+
+
+app.post('/originalComic', function(req, res){
+
+    apiCallFromRequest.callApi(function(response){
+        res.write(JSON.stringify(response));
+         res.end();
+    });
+
 });
 
     http.createServer(app).listen(port, function(){
