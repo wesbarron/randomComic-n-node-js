@@ -16,7 +16,7 @@ app.use(express.json());
 
 
 app.get('/', function(req, res){
-    res.write('Hello');
+    res.send('Hello');
 });
 
 _EXTERNAL_URL = "http://xkcd.com/info.0.json";
