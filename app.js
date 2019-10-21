@@ -37,7 +37,8 @@ app.get('/', function(req, res){
 
     var req = http.request(options, callback);
     req.end();
-    res.send("api response is: " + JSON.stringify(req));
+    var originalJSON = JSON.stringify(req);
+    res.send(originalJSON);
 });
 
 
