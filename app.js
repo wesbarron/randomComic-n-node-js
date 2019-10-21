@@ -11,6 +11,8 @@ app.set("view engine", 'ejs');
 app.use(bodyParser.urlencoded({ encoded: true}));
 app.use(express.static("public"));
 
+var http = require('http');
+
 app.get('/', function(req, res){
     res.render("index", {});
 });
@@ -45,7 +47,7 @@ var callAPIrandomComicHTTP = (callback) => {
     });
 }*/
 
-//var http = require('http');
+
 
 /*
 http.createServer((req, res) => {
