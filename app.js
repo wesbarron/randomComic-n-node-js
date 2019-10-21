@@ -48,7 +48,7 @@ var callAPIrandomComicHTTP = (callback) => {
     });
 }
 
-app.post('/addComic', function(req, res){
+app.post('/originalComic', function(req, res){
     res.send(getAPICurrentComic);
 
     res.redirect('/');
