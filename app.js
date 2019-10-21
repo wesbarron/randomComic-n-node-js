@@ -48,7 +48,11 @@ var callAPIrandomComicHTTP = (callback) => {
     });
 }
 
+app.post('/addtask', function(req, res){
+    res.send(getAPICurrentComic);
 
+    res.redirect('/');
+});
 
 /*
 http.createServer((req, res) => {
