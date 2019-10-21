@@ -13,7 +13,10 @@ app.use(bodyParser.urlencoded({ encoded: true}));
 app.use(express.static("public"));
 app.use(express.json());
 
-https.get('https://xkcd.com/info.0.json', (res) => {
+
+
+app.get('/', function(req, res){
+    https.get('https://xkcd.com/info.0.json', (res) => {
   console.log('statusCode:', res.statusCode);
   console.log('headers:', res.headers);
 
@@ -24,9 +27,6 @@ https.get('https://xkcd.com/info.0.json', (res) => {
 }).on('error', (e) => {
   console.error(e);
 });
-
-app.get('/', function(req, res){
-    res.send('hello world');
     //res.render("index", {});
 });
 
