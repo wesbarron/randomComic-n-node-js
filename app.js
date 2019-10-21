@@ -16,18 +16,7 @@ app.use(express.json());
 
 
 app.get('/', function(req, res){
-    https.get('https://xkcd.com/info.0.json', (res) => {
-  console.log('statusCode:', res.statusCode);
-  console.log('headers:', res.headers);
-
-  res.on('data', (d) => {
-    process.stdout.write(d);
-  });
-
-}).on('error', (e) => {
-  console.error(e);
-});
-    //res.render("index", {});
+    res.alert("Hello");
 });
 
 _EXTERNAL_URL = "http://xkcd.com/info.0.json";
