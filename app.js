@@ -1,5 +1,6 @@
-var https = require('https');
-var request = require('request');
+//var https = require('https');
+var http = require('http');
+//var request = require('request');
 var path = require('path');
 var express = require("express");
 var bodyParser = require("body-parser");
@@ -11,7 +12,7 @@ app.set("view engine", 'ejs');
 app.use(bodyParser.urlencoded({ encoded: true}));
 //app.use(express.static("public"));
 
-var http = require('http');
+
 
 app.get('/', function(req, res){
     res.render("index", {});
