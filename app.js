@@ -28,7 +28,7 @@ app.get('/', function(req, res){
     //res.render("index", {comicImg:comicImg});
 
 });
-
+/*
 app.post('/originalComic', function(req, res){
 
 var url = 'https://xkcd.com/614/info.0.json';
@@ -65,7 +65,7 @@ request(newURL, (error, response, body)=> {
     res.redirect('/');
     });
 });
-
+*/
 http.createServer(app).listen(port, function(){
 
 });
