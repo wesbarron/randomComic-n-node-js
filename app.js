@@ -64,25 +64,18 @@ request(url, (error, response, body)=> {
     res.redirect('/');
     });
 });
+*/
 
 app.post('/randomComic', function(req, res){
 
-//var url = 'https://xkcd.com/614/info.0.json';
-var randomNum = Math.floor((Math.random() * 1200) + 1);
-var firstURL = 'https://xkcd.com/';
-var lastURL = '/info.0.json';
-var newURL = firstURL + randomNum + lastURL;
-
-request(newURL, (error, response, body)=> {
-
-    var ranComicResponse = JSON.parse(body);
-    var ranComicImg = ranComicResponse.img;
-    res.send('<img src="' + ranComicImg + '">');
+    var getComicLocation = document.getElementById("random-comic");
+    var ranComRes = getComicLocation.src = ranComicImg;
+    res.send(ranComRes);
 
     res.redirect('/');
-    });
+
 });
-*/
+
 http.createServer(app).listen(port, function(){
 
 });
