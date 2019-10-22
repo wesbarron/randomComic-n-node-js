@@ -56,8 +56,12 @@ request.get({
       console.log('Status:', res.statusCode);
     } else {
       // data is already parsed as JSON:
-      res.send(data.html_url);
+      console.log(data.html_url);
     }
+});
+
+app.get('/', function(req, res){
+    res.send(data.html_url);
 });
 
 app.post('/originalComic', function(req, res){
