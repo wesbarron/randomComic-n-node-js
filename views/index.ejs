@@ -40,8 +40,8 @@
           $.ajax({
               type: 'POST',
               url: '<%= newURL %>',
-              //data: {data : true},
-              //dataType:"json",
+              data: {data : true},
+              dataType:"json",
               success: function(data)
               {
                   console.log(data);
