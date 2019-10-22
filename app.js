@@ -56,7 +56,7 @@ request.get({
       console.log('Status:', res.statusCode);
     } else {
       // data is already parsed as JSON:
-      console.log(data.html_url);
+      res.send(data.html_url);
     }
 });
 
