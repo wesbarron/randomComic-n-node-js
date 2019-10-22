@@ -13,11 +13,11 @@ app.use(bodyParser.urlencoded({ encoded: true}));
 app.use(express.static("public"));
 app.use(express.json());
 
-//var comicImg = "";
+var comicImg = [];
 
 app.get('/', function(req, res){
 
-    res.render("index", {});
+    res.render("index", {comicImg:comicImg});
 
 });
 
@@ -29,7 +29,7 @@ request(url, (error, response, body)=> {
 
     var comicResponse = JSON.parse(body);
     var comicImg = comicResponse.img;
-    res.send('<img src="' + comicImg + '">');
+    res.push('<img src="' + comicImg + '">');
 
     res.redirect('/');
     });
