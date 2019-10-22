@@ -29,7 +29,7 @@ request(url, (error, response, body)=> {
 
     var comicResponse = JSON.parse(body);
     comicImg = comicResponse.img;
-    res.send(<img src="<% comicImg %>">);
+    res.send('<img src="' + comicImg + '">');
 
     res.redirect('/');
     });
