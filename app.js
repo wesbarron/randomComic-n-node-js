@@ -29,11 +29,13 @@ request(url, (error, response, body)=> {
 
     var comicResponse = JSON.parse(body);
     var comicImg = comicResponse.img;
+    /*
     res.send(
         '<h2 style="text-align:center">' + comicResponse.title + '</h2>' +
         '<br>' +
         '<img src="' + comicImg + '" width="55%" height="75%" style="margin:auto">');
-
+        */
+    res.send(req.body);
     res.redirect('/');
     });
 });
