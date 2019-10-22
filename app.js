@@ -26,8 +26,8 @@ request(url, (error, response, body)=> {
 //var comicImg = '';
 
 app.get('/', function(req, res){
-    res.send(comicImg);
-    //res.render("index", {comicImg:comicImg});
+    //res.send(comicImg);
+    res.render("index", {comicImg:comicImg});
 
 });
 /*
