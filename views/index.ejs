@@ -8,17 +8,25 @@
     <div class="container">
        <h2> Comic Generator </h2>
 
-       <form action ="/originalComic" method="POST" target="_blank">
-        <button formaction="/originalComic" type="submit"> Generate Original Comic </button>
+       <form action ="/originalComic" method="POST">
+        <!--<button formaction="/originalComic" type="submit"> Generate Original Comic </button>-->
         <h2> Original Comic </h2>
 
         <img src="<%= comicImg %>">
 
-        <button formaction="/randomComic" type="submit"> Generate New Comic </button>
+        <button onclick="getComic()" type="submit"> Generate New Comic </button>
       </form>
 
       <h2> Random Comic </h2>
 
+      <img id="random-comic" src="">
+
+
     </div>
+    <script>
+        function getComic(){
+            document.getElementById("random-comic").src = <% ranComicImg %>;
+        }
+    </script>
   </body>
 </html>
