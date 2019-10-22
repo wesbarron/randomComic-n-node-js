@@ -9,7 +9,7 @@
        <h2> Comic Generator </h2>
 
        <form action="/randomComic" method="POST">
-        <button formaction="/originalComic" type="submit"> Generate New Comic </button>
+        <button id="my-button"> Generate New Comic </button>
         <h2> Original Comic </h2>
 
         <img name="original-comic" id="original-comic" src="<%= comicImg %>">
@@ -18,10 +18,16 @@
 
       <h2> Random Comic </h2>
 
-      <img id="random-comic" src="<%= ranComicImg %>">
+      <img id="random-comic" src="">
 
 
     </div>
+
+<script>
+    document.getElementById('my-button').addEventListener('click', function() {
+        document.getElementById('random-comic').src = <% ranComicImg %>;
+    });
+</script>
 
   </body>
 </html>
