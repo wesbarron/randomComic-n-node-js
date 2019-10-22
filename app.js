@@ -64,18 +64,18 @@ request(url, (error, response, body)=> {
     res.redirect('/');
     });
 });
-
+*/
 
 app.post('/randomComic', function(req, res){
-    //var comicBody = req.body.original-comic;
-    //var getComicLocation = document.getElementById("random-comic");
-    //var ranComRes = getComicLocation.src = ranComicImg;
-    res.send('<img id="ran-com" src="' + ranComicImg + '">');
+
+    document.getElementById('my-button').addEventListener('click', function() {
+        document.getElementById('random-comic').src = ranComicImg;
+    });
 
     res.redirect('/');
 
 });
-*/
+
 
 http.createServer(app).listen(port, function(){
 
