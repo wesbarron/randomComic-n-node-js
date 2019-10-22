@@ -15,7 +15,7 @@ app.use(express.json());
 
 app.get('/', function(req, res){
     res.render("index", {comicImg:comicImg});
-});
+
 
 //app.get('/', function(req, res){
 
