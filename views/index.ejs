@@ -39,7 +39,7 @@
 
           $.ajax({
               type: 'POST',
-              url: "/randomComic",
+              url: "<%= newURL %>",
               //data: {data : true},
               dataType:"json",
               success: function(data)
@@ -55,7 +55,7 @@
           return false; // So the button click does not refresh the page
       }); // Function end
     });
-      */
+
     </script>
 
   </body>
