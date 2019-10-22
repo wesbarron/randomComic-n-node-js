@@ -43,6 +43,7 @@ app.get('/', function(req, res){
 });
 */
 
+app.get('/', function(req, res){
 
 var request = require('request')
      ,url = 'https://xkcd.com/614/info.0.json';
@@ -50,11 +51,12 @@ var request = require('request')
 request(url, (error, response, body)=> {
   if (!error && response.statusCode === 200) {
     var comicResponse = JSON.parse(body);
-    console.log("Got a response: ", comicResponse.picture);
+    res.send("Got a response: ", comicResponse.picture);
   } else {
-    console.log("Got an error: ", error, ", status code: ", response.statusCode);
+    res.send("Got an error: ", error, ", status code: ", response.statusCode);
   }
-})
+});
+});
 
 
 
