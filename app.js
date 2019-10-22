@@ -14,10 +14,12 @@ app.use(express.static("public"));
 app.use(express.json());
 
 app.get('/', function(req, res){
+
     res.render("index", {comicImg:comicImg});
 
+});
 
-//app.get('/', function(req, res){
+app.post('/originalComic', function(req, res){
 
 var url = 'https://xkcd.com/614/info.0.json';
 
@@ -25,12 +27,14 @@ request(url, (error, response, body)=> {
 
     var comicResponse = JSON.parse(body);
     var comicImg = comicResponse.img;
-    //res.send("Got a response: " + comicResponse.img);
+    res.send(comicImg);
+
+    res.redirect('/');
+    });
 });
-//});
 
 
-
+/*
 app.post('/originalComic', function(req, res){
     var data = JSON.parse(getAPICurrentComic);
     var postData = JSON.stringify(data);
@@ -38,7 +42,7 @@ app.post('/originalComic', function(req, res){
 
     res.redirect('/');
 });
-
+*/
 
 http.createServer(app).listen(port, function(){
 
