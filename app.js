@@ -13,37 +13,11 @@ app.use(bodyParser.urlencoded({ encoded: true}));
 app.use(express.static("public"));
 app.use(express.json());
 
-
-/*
 app.get('/', function(req, res){
-    var api_response = '';
-
-    var options = {
-        host: 'xkcd.com',
-        port: 80,
-        path: '/info.0.json',
-        method: 'GET'
-    }
-
-    callback = function(response){
-        response.on("data", function(chunk){
-            api_response+=chunk;
-        });
-
-        response.on("end", function(){
-            console.log("api response is: "+api_response);
-        });
-    }
-
-    var req = https.request(options, callback);
-    var originalJSON = req;
-    res.send(originalJSON);
-    req.end();
-
+    res.render("index", {comicResponse:comicResponse});
 });
-*/
 
-app.get('/', function(req, res){
+//app.get('/', function(req, res){
 
 var url = 'https://xkcd.com/614/info.0.json';
 
@@ -52,7 +26,7 @@ request(url, (error, response, body)=> {
     var comicResponse = JSON.parse(body);
     res.send("Got a response: " + comicResponse.img);
 });
-});
+//});
 
 
 
