@@ -43,26 +43,20 @@ app.get('/', function(req, res){
 });
 */
 
-var url = 'https://xkcd.com/614/info.0.json';
 
-request.get({
-    url: url,
-    json: true,
-    headers: {'User-Agent': 'request'}
-  }, (err, res, data) => {
-    if (err) {
-      console.log('Error:', err);
-    } else if (res.statusCode !== 200) {
-      console.log('Status:', res.statusCode);
-    } else {
-      // data is already parsed as JSON:
-      console.log(data.html_url);
-    }
-});
+var request = require('request')
+     ,url = 'https://xkcd.com/614/info.0.json';
 
-app.get('/', function(req, res){
-    res.send(data.html_url);
-});
+request(url, (error, response, body)=> {
+  if (!error && response.statusCode === 200) {
+    var comicResponse = JSON.parse(body);
+    console.log("Got a response: ", comicResponse.picture);
+  } else {
+    console.log("Got an error: ", error, ", status code: ", response.statusCode);
+  }
+})
+
+
 
 app.post('/originalComic', function(req, res){
     var data = JSON.parse(getAPICurrentComic);
@@ -71,23 +65,6 @@ app.post('/originalComic', function(req, res){
 
     res.redirect('/');
 });
-
-/*
-http.createServer((req, res) => {
-    if(req.url === "/request"){
-        apiCallFromRequest.callApi(function(response){
-            res.write(JSON.stringify(response));
-            res.end();
-        });
-    }
-    else if(req.url === "/node"){
-        apiCallFromNode.callApi(function(response){
-            res.write(response);
-            res.end();
-        });
-    }
-});*/
-
 
 
 http.createServer(app).listen(port, function(){
