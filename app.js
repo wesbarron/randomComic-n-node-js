@@ -36,7 +36,7 @@ app.get('/', function(req, res){
     }
 
     var req = https.request(options, callback);
-    var originalJSON = JSON.parse(api_response.data);
+    var originalJSON = JSON.parse(api_response);
     res.send(originalJSON);
     req.end();
 
