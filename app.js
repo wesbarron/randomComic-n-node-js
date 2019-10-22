@@ -13,9 +13,11 @@ app.use(bodyParser.urlencoded({ encoded: true}));
 app.use(express.static("public"));
 app.use(express.json());
 
+var comicImg = "";
+
 app.get('/', function(req, res){
 
-    res.render("index", {});
+    res.render("index", {comicImg:comicImg});
 
 });
 
@@ -26,8 +28,8 @@ var url = 'https://xkcd.com/614/info.0.json';
 request(url, (error, response, body)=> {
 
     var comicResponse = JSON.parse(body);
-    var comicImg = comicResponse.img;
-    res.send(comicImg);
+    comicImg = comicResponse.img;
+    res.body(comicImg);
 
     res.redirect('/');
     });
