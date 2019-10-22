@@ -17,6 +17,7 @@ app.use(express.json());
 var url = 'https://xkcd.com/614/info.0.json';
 var comicImg;
 var ranComicImg;
+var newURL;
 
 request(url, (error, response, body)=> {
 
@@ -42,7 +43,7 @@ request(newURL, (error, response, body)=> {
 
 app.get('/', function(req, res){
     //res.send(comicImg);
-    res.render("index", {comicImg:comicImg, ranComicImg:ranComicImg});
+    res.render("index", {comicImg:comicImg, ranComicImg:ranComicImg, newURL:newURL});
 
 });
 /*
