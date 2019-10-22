@@ -68,10 +68,10 @@ request(url, (error, response, body)=> {
 
 app.post('/randomComic', function(req, res){
 
-    document.getElementById('my-button').addEventListener('click', function() {
+    var out = document.getElementById('my-button').addEventListener('click', function() {
         document.getElementById('random-comic').src = ranComicImg;
     });
-
+    res.send(out);
     res.redirect('/');
 
 });
