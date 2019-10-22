@@ -16,8 +16,8 @@ app.use(express.json());
 var comicImg = '';
 
 app.get('/', function(req, res){
-
-    res.render("index", {comicImg:comicImg});
+    res.send(ranComicImg);
+    //res.render("index", {comicImg:comicImg});
 
 });
 
