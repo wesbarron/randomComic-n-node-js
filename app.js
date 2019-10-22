@@ -13,11 +13,11 @@ app.use(bodyParser.urlencoded({ encoded: true}));
 app.use(express.static("public"));
 app.use(express.json());
 
-var comicImg = "";
+//var comicImg = "";
 
 app.get('/', function(req, res){
 
-    res.render("index", {comicImg:comicImg});
+    res.render("index", {});
 
 });
 
@@ -28,7 +28,7 @@ var url = 'https://xkcd.com/614/info.0.json';
 request(url, (error, response, body)=> {
 
     var comicResponse = JSON.parse(body);
-    comicImg = comicResponse.img;
+    var comicImg = comicResponse.img;
     res.send('<img src="' + comicImg + '">');
 
     res.redirect('/');
@@ -46,7 +46,7 @@ var newURL = firstURL + randomNum + lastURL;
 request(newURL, (error, response, body)=> {
 
     var ranComicResponse = JSON.parse(body);
-    ranComicImg = comicResponse.img;
+    var ranComicImg = comicResponse.img;
     res.send('<img src="' + ranComicImg + '">');
 
     res.redirect('/');
