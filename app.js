@@ -16,12 +16,8 @@ app.use(express.json());
 var comicImg = '';
 
 app.get('/', function(req, res){
-    var randomNum = Math.floor((Math.random() * 1200) + 1);
-    var firstURL = 'https://xkcd.com/';
-    var lastURL = '/info.0.json';
-    var newURL = firstURL + randomNum + lastURL;
-    res.send(newURL);
-    //res.render("index", {comicImg:comicImg});
+
+    res.render("index", {comicImg:comicImg});
 
 });
 
@@ -55,7 +51,7 @@ var newURL = firstURL + randomNum + lastURL;
 request(newURL, (error, response, body)=> {
 
     var ranComicResponse = JSON.parse(body);
-    var ranComicImg = comicResponse.img;
+    var ranComicImg = ranComicResponse.img;
     res.send('<img src="' + ranComicImg + '">');
 
     res.redirect('/');
