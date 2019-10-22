@@ -67,10 +67,10 @@ request(url, (error, response, body)=> {
 */
 
 app.post('/randomComic', function(req, res){
-
-    var getComicLocation = document.getElementById("random-comic");
-    var ranComRes = getComicLocation.src = ranComicImg;
-    res.send(ranComRes);
+    var comicBody = req.body;
+    //var getComicLocation = document.getElementById("random-comic");
+    //var ranComRes = getComicLocation.src = ranComicImg;
+    res.send(comicBody);
 
     res.redirect('/');
 
