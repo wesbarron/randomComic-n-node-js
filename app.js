@@ -50,7 +50,7 @@ var url = 'https://xkcd.com/614/info.0.json';
 request(url, (error, response, body)=> {
 
     var comicResponse = JSON.parse(body);
-    res.send("Got a response: " + comicResponse.body);
+    res.send("Got a response: " + comicResponse.img);
 });
 });
 
