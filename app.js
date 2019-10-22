@@ -74,7 +74,7 @@ var randomNum = Math.floor((Math.random() * 1200) + 1);
 var firstURL = 'https://xkcd.com/';
 var lastURL = '/info.0.json';
 var newURL = firstURL + randomNum + lastURL;
-/*
+
 request(newURL, (error, response, body)=> {
 
     var ranComicResponse = JSON.parse(body);
@@ -82,8 +82,8 @@ request(newURL, (error, response, body)=> {
     console.log(ranComicImg);
 });
 
-    res.redirect('/');*/
-    res.send(newURL);
+    //res.redirect('/');
+    res.send(ranComicImg);
 
 });
 
