@@ -64,18 +64,27 @@ request(url, (error, response, body)=> {
     res.redirect('/');
     });
 });
-
+*/
 
 app.post('/randomComic', function(req, res){
 
-    document.getElementById('my-button').addEventListener('click', function() {
-        document.getElementById('random-comic').src = ranComicImg;
-    });
+   //get random comic
+var randomNum = Math.floor((Math.random() * 1200) + 1);
+var firstURL = 'https://xkcd.com/';
+var lastURL = '/info.0.json';
+var newURL = firstURL + randomNum + lastURL;
+
+request(newURL, (error, response, body)=> {
+
+    var ranComicResponse = JSON.parse(body);
+    ranComicImg = ranComicResponse.img;
+    console.log(ranComicImg);
+});
 
     res.redirect('/');
 
 });
-*/
+
 
 http.createServer(app).listen(port, function(){
 

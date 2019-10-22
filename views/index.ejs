@@ -36,19 +36,16 @@
 
         $(document).ready(function() {
         $('#my-button').click(function (e){
-            console.log('clicked!' + new Date());
-            });
-        });
 
-          /*
           $.ajax({
-              type: 'post',
-              url: "template/comic.php",
-              data: {data : true},
-              dataType:"HTML",
+              type: 'POST',
+              url: "/randomComic",
+              //data: {data : true},
+              dataType:"json",
               success: function(data)
               {
-                  $('#comic').html(data) // The server's response is now placed inside your target div
+                  console.log('ajax success!');
+                  //$('#random-comic').html(data) // The server's response is now placed inside your target div
               },
               error: function()
               {
