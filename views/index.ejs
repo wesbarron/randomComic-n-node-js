@@ -8,16 +8,13 @@
     <div class="container">
        <h2> Comic Generator </h2>
 
-       <!--<form method="POST">-->
-        <!--<button formaction="/originalComic" type="submit"> Generate Original Comic </button>-->
+       <form action="randomComic" method="POST">
+        <button formaction="/originalComic" type="submit"> Generate New Comic </button>
         <h2> Original Comic </h2>
 
         <img id="original-comic" src="<%= comicImg %>">
         <br>
 
-        <form action="/randomComic" method="POST">
-        <button> Generate New Comic </button>
-        </form>
 
       <h2> Random Comic </h2>
 
