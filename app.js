@@ -14,12 +14,13 @@ app.use(express.static("public"));
 app.use(express.json());
 
 var url = 'https://xkcd.com/614/info.0.json';
+var comicImg;
 
 request(url, (error, response, body)=> {
 
     var comicResponse = JSON.parse(body);
-    var comicImg = comicResponse.img;
-    return comicImg;
+    comicImg = comicResponse.img;
+    console.log(comicImg);
 });
 
 //var comicImg = '';
