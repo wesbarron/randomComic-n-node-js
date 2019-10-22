@@ -14,7 +14,7 @@ app.use(express.static("public"));
 app.use(express.json());
 
 
-
+/*
 app.get('/', function(req, res){
     var api_response = '';
 
@@ -36,13 +36,29 @@ app.get('/', function(req, res){
     }
 
     var req = https.request(options, callback);
-    var originalJSON = req.map;
+    var originalJSON = req;
     res.send(originalJSON);
     req.end();
 
 });
+*/
 
+var url = 'https://xkcd.com/614/info.0.json';
 
+request.get({
+    url: url,
+    json: true,
+    headers: {'User-Agent': 'request'}
+  }, (err, res, data) => {
+    if (err) {
+      console.log('Error:', err);
+    } else if (res.statusCode !== 200) {
+      console.log('Status:', res.statusCode);
+    } else {
+      // data is already parsed as JSON:
+      console.log(data.html_url);
+    }
+});
 
 app.post('/originalComic', function(req, res){
     var data = JSON.parse(getAPICurrentComic);
