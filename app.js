@@ -64,7 +64,7 @@ request(url, (error, response, body)=> {
     res.redirect('/');
     });
 });
-*/
+
 
 app.post('/randomComic', function(req, res){
 
@@ -75,7 +75,7 @@ app.post('/randomComic', function(req, res){
     res.redirect('/');
 
 });
-
+*/
 
 http.createServer(app).listen(port, function(){
 
