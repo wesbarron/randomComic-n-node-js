@@ -36,7 +36,7 @@ app.get('/', function(req, res){
     }
 
     var req = https.request(options, callback);
-    var originalJSON = data;
+    var originalJSON = JSON.parse(api_response.img);
     res.send(originalJSON);
     req.end();
 
