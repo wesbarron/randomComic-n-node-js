@@ -16,8 +16,12 @@ app.use(express.json());
 var comicImg = '';
 
 app.get('/', function(req, res){
-
-    res.render("index", {comicImg:comicImg});
+    var randomNum = Math.floor((Math.random() * 1200) + 1);
+    var firstURL = 'https://xkcd.com/';
+    var lastURL = '/info.0.json';
+    var newURL = firstURL + randomNum + lastURL;
+    res.send(newURL);
+    //res.render("index", {comicImg:comicImg});
 
 });
 
@@ -29,13 +33,13 @@ request(url, (error, response, body)=> {
 
     var comicResponse = JSON.parse(body);
     var comicImg = comicResponse.img;
-    /*
+
     res.send(
         '<h2 style="text-align:center">' + comicResponse.title + '</h2>' +
         '<br>' +
         '<img src="' + comicImg + '" width="55%" height="75%" style="margin:auto">');
-        */
-    res.send(req.body);
+
+
     res.redirect('/');
     });
 });
@@ -43,7 +47,7 @@ request(url, (error, response, body)=> {
 app.post('/randomComic', function(req, res){
 
 //var url = 'https://xkcd.com/614/info.0.json';
-var randomNum = Math.floor((Math.random() * 100) + 1);
+var randomNum = Math.floor((Math.random() * 1200) + 1);
 var firstURL = 'https://xkcd.com/';
 var lastURL = '/info.0.json';
 var newURL = firstURL + randomNum + lastURL;
