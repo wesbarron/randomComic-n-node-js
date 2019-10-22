@@ -36,8 +36,6 @@ request(newURL, (error, response, body)=> {
     var ranComicResponse = JSON.parse(body);
     ranComicImg = ranComicResponse.img;
     console.log(ranComicImg);
-
-    res.redirect('/');
 });
 
 //var comicImg = '';
