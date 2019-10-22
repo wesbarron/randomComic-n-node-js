@@ -45,16 +45,12 @@ app.get('/', function(req, res){
 
 app.get('/', function(req, res){
 
-var request = require('request')
-     ,url = 'https://xkcd.com/614/info.0.json';
+var url = 'https://xkcd.com/614/info.0.json';
 
 request(url, (error, response, body)=> {
-  if (!error && response.statusCode === 200) {
+
     var comicResponse = JSON.parse(body);
     res.send("Got a response: ", comicResponse);
-  } else {
-    res.send("Got an error: ", error, ", status code: ", response.statusCode);
-  }
 });
 });
 
