@@ -25,6 +25,33 @@
 
     </div>
 
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+        $('#my-button').click(function (e){
+            console.log('clicked!' + new Date());
+            });
+        });
+
+          /*
+          $.ajax({
+              type: 'post',
+              url: "template/comic.php",
+              data: {data : true},
+              dataType:"HTML",
+              success: function(data)
+              {
+                  $('#comic').html(data) // The server's response is now placed inside your target div
+              },
+              error: function()
+              {
+                  alert("Failed to get data.");
+            }
+          }); // Ajax close
+          return false; // So the button click does not refresh the page
+      }) // Function end
+      */
+    </script>
 
   </body>
 </html>
