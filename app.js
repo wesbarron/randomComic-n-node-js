@@ -51,7 +51,7 @@ var request = require('request')
 request(url, (error, response, body)=> {
   if (!error && response.statusCode === 200) {
     var comicResponse = JSON.parse(body);
-    res.send("Got a response: ", comicResponse.picture);
+    res.send("Got a response: ", comicResponse.img);
   } else {
     res.send("Got an error: ", error, ", status code: ", response.statusCode);
   }
