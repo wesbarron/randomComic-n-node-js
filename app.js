@@ -32,7 +32,7 @@ request(url, (error, response, body)=> {
     res.send(
         '<h2 style="text-align:center">' + comicResponse.title + '</h2>' +
         '<br>' +
-        '<img src="' + comicImg + '" width="55%" height="75%" style="align-self:center">');
+        '<img src="' + comicImg + '" width="55%" height="75%" style="margin-left:auto margin-right:auto">');
 
     res.redirect('/');
     });
