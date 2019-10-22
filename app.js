@@ -18,7 +18,8 @@ var url = 'https://xkcd.com/614/info.0.json';
 request(url, (error, response, body)=> {
 
     var comicResponse = JSON.parse(body);
-    let comicImg = comicResponse.img;
+    var comicImg = comicResponse.img;
+    return comicImg;
 });
 
 //var comicImg = '';
