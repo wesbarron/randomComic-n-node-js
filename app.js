@@ -67,7 +67,7 @@ request(url, (error, response, body)=> {
 */
 
 app.post('/randomComic', function(req, res){
-    var comicBody = req.body.img;
+    var comicBody = req.body;
     //var getComicLocation = document.getElementById("random-comic");
     //var ranComRes = getComicLocation.src = ranComicImg;
     res.send(comicBody);
