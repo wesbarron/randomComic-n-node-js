@@ -44,8 +44,7 @@
               //dataType:"json",
               success: function(data)
               {
-                  console.log(data);
-                //$('#random-comic').src(data) // The server's response is now placed inside your target div
+                $('#random-comic').prop('src', data) // The server's response is now placed inside your target div
               },
               error: function()
               {
