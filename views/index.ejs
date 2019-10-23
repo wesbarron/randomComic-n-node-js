@@ -11,13 +11,18 @@
 
 
         <h2> Original Comic </h2>
-
+        <br>
+        <h3><% origComicTitle %></h3> <!--Title-->
+        <h4><% origComicYear %></h4> <!--Year-->
         <img class="img-fluid" name="original-comic" id="original-comic" src="<%= comicImg %>">
         <br>
         <br>
      <button class="btn btn-primary btn-lg btn-block" id="my-button"> Generate New Comic </button>
 
       <h2> Random Comic </h2>
+      <br>
+      <h3 id="comic-title"></h3> <!--Title-->
+        <h4 id="comic-year"></h4> <!--Year-->
 
       <img class="img-fluid" id="random-comic" src="">
 
@@ -42,7 +47,9 @@
               //dataType:"json",
               success: function(data)
               {
+                console.log(data);
                 $('#random-comic').prop('src', data) // The server's response is now placed inside your target div
+                $('#comic-title').html();
               },
               error: function()
               {

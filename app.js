@@ -18,14 +18,18 @@ var url = 'https://xkcd.com/614/info.0.json';
 var comicImg;
 var ranComicImg;
 var newURL;
+var origComicTitle;
+var origComicYear;
 
 request(url, (error, response, body)=> {
 
     var comicResponse = JSON.parse(body);
     comicImg = comicResponse.img;
+    origComicTitle = comicResponse.title;
+    origComicYear = comicResponse.year;
     console.log(comicImg);
 });
-
+/*
 //get random comic
 var randomNum = Math.floor((Math.random() * 1200) + 1);
 var firstURL = 'https://xkcd.com/';
@@ -38,12 +42,12 @@ request(newURL, (error, response, body)=> {
     ranComicImg = ranComicResponse.img;
     console.log(ranComicImg);
 });
-
+*/
 //var comicImg = '';
 
 app.get('/', function(req, res){
     //res.send(comicImg);
-    res.render("index", {comicImg:comicImg, ranComicImg:ranComicImg, newURL:newURL});
+    res.render("index", {comicImg:comicImg, ranComicImg:ranComicImg, newURL:newURL, origComicTitle:origComicTitle, origComicYear:origComicYear});
 
 });
 /*
@@ -66,7 +70,7 @@ request(url, (error, response, body)=> {
     });
 });
 */
-
+//get image url//
 app.post('/randomComic', function(req, res){
 
    //get random comic
@@ -79,11 +83,13 @@ request(newURL, (error, response, body)=> {
 
     var ranComicResponse = JSON.parse(body);
     ranComicImg = ranComicResponse.img;
+    var ranComicTitle = ranComicResponse.title;
+    var ranComicYear = ranComicResponse.year;
     console.log(ranComicImg);
 });
 
     //res.redirect('/');
-    res.send(ranComicImg);
+    res.send(ranComicImg + ranComicTitle + ranComicYear);
 
 });
 
