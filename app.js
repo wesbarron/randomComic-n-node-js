@@ -20,6 +20,7 @@ var ranComicImg;
 var newURL;
 var origComicTitle;
 var origComicYear;
+var ranComicResponse;
 
 request(url, (error, response, body)=> {
 
@@ -47,7 +48,7 @@ request(newURL, (error, response, body)=> {
 
 app.get('/', function(req, res){
     //res.send(comicImg);
-    res.render("index", {comicImg:comicImg, ranComicImg:ranComicImg, newURL:newURL, origComicTitle:origComicTitle, origComicYear:origComicYear});
+    res.render("index", {ranComicResponse:ranComicResponse, comicImg:comicImg, ranComicImg:ranComicImg, newURL:newURL, origComicTitle:origComicTitle, origComicYear:origComicYear});
 
 });
 /*
@@ -90,7 +91,7 @@ request(newURL, (error, response, body)=> {
 
     //res.redirect('/');
     //res.send(ranComicImg);
-    res.send(ranComicYear);
+    res.send(ranComicResponse);
 
 });
 
