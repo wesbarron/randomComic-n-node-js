@@ -89,7 +89,8 @@ request(newURL, (error, response, body)=> {
 });
 
     //res.redirect('/');
-    res.send(ranComicImg + ranComicTitle + ranComicYear);
+    res.send(ranComicImg);
+    res.send(ranCominResponse);
 
 });
 
