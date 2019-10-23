@@ -12,7 +12,7 @@
 
         <h2> Original Comic </h2>
         <br>
-        <h3><% origComicTitle %></h3> <!--Title-->
+        <h3><%= origComicTitle %></h3> <!--Title-->
         <h4><% origComicYear %></h4> <!--Year-->
         <img class="img-fluid" name="original-comic" id="original-comic" src="<%= comicImg %>">
         <br>
@@ -48,8 +48,8 @@
               success: function(data)
               {
                 console.log(data);
-                $('#random-comic').prop('src', data) // The server's response is now placed inside your target div
-                $('#comic-title').html();
+               // $('#random-comic').prop('src', data) // The server's response is now placed inside your target div
+               // $('#comic-title').html();
               },
               error: function()
               {
