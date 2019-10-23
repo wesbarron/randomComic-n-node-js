@@ -90,7 +90,7 @@ request(newURL, (error, response, body)=> {
 
     //res.redirect('/');
     //res.send(ranComicImg);
-    res.send(ranComicResponse);
+    res.send(ranComicResponse.body);
 
 });
 
