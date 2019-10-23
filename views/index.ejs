@@ -44,10 +44,10 @@
               type: 'POST',
               url: 'randomComic',
               data: {data : true},
-              //dataType:"json",
+              dataType:"json",
               success: function(data)
               {
-                console.log(data.img);
+                console.log(data);
                // $('#random-comic').prop('src', data) // The server's response is now placed inside your target div
                // $('#comic-title').html();
               },
