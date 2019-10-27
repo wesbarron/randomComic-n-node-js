@@ -3,6 +3,7 @@ var http = require('http');
 var request = require('request');
 var path = require('path');
 var express = require("express");
+var router = express.router();
 var bodyParser = require("body-parser");
 var app = express();
 var port = process.env.PORT || 3000;
@@ -53,7 +54,20 @@ app.get('/', function(req, res){
 
 });
 
+router.use(function (req, res, next){
+    console.log("/" + req.method);
+    next();
+});
 
+router.get('/', function(req, res){
+    res.sendFile(path + "index.ejs");
+});
+
+router.get('/random', function(req, res){
+    res.sendFile(path + "random.ejs");
+});
+
+app.use("/", router);
 
 /*
 app.post('/originalComic', function(req, res){
