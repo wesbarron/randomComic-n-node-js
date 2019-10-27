@@ -32,74 +32,27 @@ request(url, (error, response, body)=> {
     origComicYear = comicResponse.year;
     console.log(comicImg);
 });
-/*
-//get random comic
-var randomNum = Math.floor((Math.random() * 1200) + 1);
-var firstURL = 'https://xkcd.com/';
-var lastURL = '/info.0.json';
-var newURL = firstURL + randomNum + lastURL;
 
-request(newURL, (error, response, body)=> {
-
-    var ranComicResponse = JSON.parse(body);
-    ranComicImg = ranComicResponse.img;
-    console.log(ranComicImg);
-});
-*/
-//var comicImg = '';
 
 app.get('/', function(req, res){
 
-    res.render("index", {ranComicResponse:ranComicResponse, comicImg:comicImg, ranComicImg:ranComicImg, newURL:newURL, origComicTitle:origComicTitle, origComicYear:origComicYear});
+    res.render("index", {ranComicTitle:ranComicTitle, ranComicYear:ranComicYear, ranComicResponse:ranComicResponse, comicImg:comicImg, ranComicImg:ranComicImg, newURL:newURL, origComicTitle:origComicTitle, origComicYear:origComicYear});
 
 });
 
 app.get('/random', function(req, res){
 
-    res.render("random", {ranComicResponse:ranComicResponse, comicImg:comicImg, ranComicImg:ranComicImg, newURL:newURL, origComicTitle:origComicTitle, origComicYear:origComicYear});
+    res.render("random", {ranComicTitle:ranComicTitle, ranComicYear:ranComicYear, ranComicResponse:ranComicResponse, comicImg:comicImg, ranComicImg:ranComicImg, newURL:newURL, origComicTitle:origComicTitle, origComicYear:origComicYear});
 
 });
-/*
-router.use(function (req, res, next){
-    console.log("/" + req.method);
-    next();
-});
-
-router.get('/', function(req, res){
-    res.sendFile(path + "index.ejs");
-});
-
-router.get('/random', function(req, res){
-    res.sendFile(path + "random.ejs");
-});
-
-app.use("/", router);*/
-
-/*
-app.post('/originalComic', function(req, res){
-
-var url = 'https://xkcd.com/614/info.0.json';
-
-request(url, (error, response, body)=> {
-
-    var comicResponse = JSON.parse(body);
-    var comicImg = comicResponse.img;
-
-    res.send(
-        '<h2 style="text-align:center">' + comicResponse.title + '</h2>' +
-        '<br>' +
-        '<img src="' + comicImg + '" width="55%" height="75%" style="margin:auto">');
 
 
-    res.redirect('/');
-    });
-});
-*/
-//get image url//
+
+   //get random image url//
 app.post('/randomComic', function(req, res){
 
    //get random comic
-var randomNum = Math.floor((Math.random() * 1200));
+var randomNum = Math.floor((Math.random() * 1200) + 1);
 var firstURL = 'https://xkcd.com/';
 var lastURL = '/info.0.json';
 var newURL = firstURL + randomNum + lastURL;
@@ -110,12 +63,14 @@ request(newURL, (error, response, body)=> {
     ranComicImg = ranComicResponse.img;
     var ranComicTitle = ranComicResponse.title;
     var ranComicYear = ranComicResponse.year;
+    console.log(ranComicImg);
     console.log(ranComicTitle);
+    console.log(ranComicYear);
 });
 
-    //res.redirect('/');
+    res.send(ranComicImg);
     res.send(ranComicTitle);
-    //res.send(ranComicResponse.body);
+    res.send(ranComicYear);
 
 });
 

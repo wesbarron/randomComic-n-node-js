@@ -26,10 +26,10 @@
       <h2> Random Comic </h2>
       <br>
       <button class="btn btn-primary btn-lg btn-block" id="my-button"> Generate New Comic </button>
-      <h3 id="comic-title"></h3> <!--Title-->
-      <h4 id="comic-year"></h4> <!--Year-->
+      <h3 id="comic-title"><%= ranComicTitle %></h3> <!--Title-->
+      <h4 id="comic-year"><%= ranComicYear %></h4> <!--Year-->
 
-      <img class="img-fluid rounded mx-auto d-block" id="random-comic" src="">
+      <img class="img-fluid rounded mx-auto d-block" id="random-comic" src="https://imgs.xkcd.com/comics/barrel_cropped_(1).jpg">
 
 
     </div>
@@ -54,7 +54,7 @@
               {
                 console.log(data);
                 $('#random-comic').prop('src', data) // The server's response is now placed inside your target div
-               // $('#comic-title').html();
+                //$('#comic-title').html();
               },
               error: function()
               {
