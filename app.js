@@ -3,7 +3,6 @@ var http = require('http');
 var request = require('request');
 var path = require('path');
 var express = require("express");
-//var router = express.router();
 var bodyParser = require("body-parser");
 var app = express();
 var port = process.env.PORT || 3000;
@@ -35,13 +34,13 @@ request(url, (error, response, body)=> {
     console.log(comicImg);
 });
 
-
+//route to index.ejs
 app.get('/', function(req, res){
 
     res.render("index", {ranComicTitle:ranComicTitle, ranComicYear:ranComicYear, ranComicResponse:ranComicResponse, comicImg:comicImg, ranComicImg:ranComicImg, newURL:newURL, origComicTitle:origComicTitle, origComicYear:origComicYear});
 
 });
-
+//route to random.ejs
 app.get('/random', function(req, res){
 
     res.render("random", {ranComicTitle:ranComicTitle, ranComicYear:ranComicYear, ranComicResponse:ranComicResponse, comicImg:comicImg, ranComicImg:ranComicImg, newURL:newURL, origComicTitle:origComicTitle, origComicYear:origComicYear});
