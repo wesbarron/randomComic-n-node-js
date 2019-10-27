@@ -56,7 +56,7 @@
                 console.log(data);
                 $('#random-comic').prop('src', data) // The server's response is now placed inside your target div
                 $('#comic-title').html(data.title);
-                $('#comic-year').html("Hello");
+                $('#comic-year').html(data);
               },
               error: function()
               {
