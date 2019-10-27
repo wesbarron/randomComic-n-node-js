@@ -18,6 +18,8 @@ app.use(express.json());
 var url = 'https://xkcd.com/614/info.0.json';
 var comicImg;
 var ranComicImg;
+var ranComicTitle;
+var ranComicYear;
 var newURL;
 var origComicTitle;
 var origComicYear;
