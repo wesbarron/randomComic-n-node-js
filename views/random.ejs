@@ -7,21 +7,54 @@
   </head>
   <body>
     <div class="container">
-       <h1 class="jumbotron text-center"> Comic Generator </h1>
+       <h1 class="jumbotron"> Comic Generator </h1>
 
 
-        <h2> Original Comic </h2>
-        <br>
-        <h3><%= origComicTitle %></h3> <!--Title-->
-        <h4><%= origComicYear %></h4> <!--Year-->
-        <img class="img-fluid mx-auto" name="original-comic" id="original-comic" src="<%= comicImg %>">
+        
+     <button class="btn btn-primary btn-lg btn-block" id="my-button"> Generate New Comic </button>
 
+      <h2> Random Comic </h2>
+      <br>
+      <h3 id="comic-title"></h3> <!--Title-->
+        <h4 id="comic-year"></h4> <!--Year-->
+
+      <img class="img-fluid" id="random-comic" src="">
+
+
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://use.fontawesome.com/f1c966bcb4.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+        $('#my-button').click(function (e){
+
+          $.ajax({
+              type: 'POST',
+              url: 'randomComic',
+              data: {data : true},
+              //dataType:"json",
+              success: function(data)
+              {
+                console.log(data);
+                $('#random-comic').prop('src', data) // The server's response is now placed inside your target div
+               // $('#comic-title').html();
+              },
+              error: function()
+              {
+                  alert("Failed to get data.");
+            }
+          }); // Ajax close
+          return false; // So the button click does not refresh the page
+      }); // Function end
+    });
+
+    </script>
 
   </body>
 </html>
