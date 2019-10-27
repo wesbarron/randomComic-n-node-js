@@ -70,10 +70,10 @@ request(newURL, (error, response, body)=> {
     console.log(ranComicYear);
 });
 
-    res.write(ranComicImg);
-    res.write(ranComicTitle);
-    res.write(ranComicYear);
-    res.end();
+    //res.send(ranComicImg);
+    //res.send(ranComicTitle);
+    res.send(ranComicYear);
+    
 
 });
 
