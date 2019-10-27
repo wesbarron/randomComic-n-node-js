@@ -70,8 +70,8 @@ request(newURL, (error, response, body)=> {
     console.log(ranComicYear);
 });
 
-    res.send(ranComicImg);
-    res.send(ranComicTitle);
+    res.write(ranComicImg);
+    res.write(ranComicTitle);
     res.send(ranComicYear);
 
 });
