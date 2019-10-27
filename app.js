@@ -63,8 +63,8 @@ request(newURL, (error, response, body)=> {
 
     var ranComicResponse = JSON.parse(body);
     ranComicImg = ranComicResponse.img;
-    var ranComicTitle = ranComicResponse.title;
-    var ranComicYear = ranComicResponse.year;
+    ranComicTitle = ranComicResponse.title;
+    ranComicYear = ranComicResponse.year;
     console.log(ranComicImg);
     console.log(ranComicTitle);
     console.log(ranComicYear);
@@ -73,7 +73,7 @@ request(newURL, (error, response, body)=> {
     //res.send(ranComicImg);
     //res.send(ranComicTitle);
     res.send(ranComicYear);
-    
+
 
 });
 
