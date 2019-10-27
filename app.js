@@ -53,7 +53,7 @@ app.get('/', function(req, res){
     res.render("index", {ranComicResponse:ranComicResponse, comicImg:comicImg, ranComicImg:ranComicImg, newURL:newURL, origComicTitle:origComicTitle, origComicYear:origComicYear});
 
 });
-
+/*
 router.use(function (req, res, next){
     console.log("/" + req.method);
     next();
@@ -67,7 +67,7 @@ router.get('/random', function(req, res){
     res.sendFile(path + "random.ejs");
 });
 
-app.use("/", router);
+app.use("/", router);*/
 
 /*
 app.post('/originalComic', function(req, res){
