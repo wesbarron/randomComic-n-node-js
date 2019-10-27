@@ -72,7 +72,8 @@ request(newURL, (error, response, body)=> {
 
     res.write(ranComicImg);
     res.write(ranComicTitle);
-    res.send(ranComicYear);
+    res.write(ranComicYear);
+    res.end();
 
 });
 
