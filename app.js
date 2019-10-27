@@ -53,6 +53,12 @@ app.get('/', function(req, res){
     res.render("index", {ranComicResponse:ranComicResponse, comicImg:comicImg, ranComicImg:ranComicImg, newURL:newURL, origComicTitle:origComicTitle, origComicYear:origComicYear});
 
 });
+
+app.get('/random', function(req, res){
+
+    res.render("random", {ranComicResponse:ranComicResponse, comicImg:comicImg, ranComicImg:ranComicImg, newURL:newURL, origComicTitle:origComicTitle, origComicYear:origComicYear});
+
+});
 /*
 router.use(function (req, res, next){
     console.log("/" + req.method);
