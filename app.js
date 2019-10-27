@@ -70,8 +70,7 @@ request(newURL, (error, response, body)=> {
     console.log(ranComicYear);
 });
 
-    //res.send(ranComicImg);
-    //res.send(ranComicTitle);
+    //sends JSON body to AJAX Call
     res.send(ranComicResponse);
 
 
