@@ -48,7 +48,7 @@ request(newURL, (error, response, body)=> {
 
 app.get('/', function(req, res){
     //res.send(comicImg);
-    res.render("index", {ranComicResponse:ranComicResponse, comicImg:comicImg, ranComicImg:ranComicImg, newURL:newURL, origComicTitle:origComicTitle, origComicYear:origComicYear});
+    res.render("random", {ranComicResponse:ranComicResponse, comicImg:comicImg, ranComicImg:ranComicImg, newURL:newURL, origComicTitle:origComicTitle, origComicYear:origComicYear});
 
 });
 /*
