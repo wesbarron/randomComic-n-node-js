@@ -54,9 +54,9 @@
               success: function(data)
               {
                 console.log(data);
-                $('#random-comic').prop('src', data) // The server's response is now placed inside your target div
+                $('#random-comic').prop('src', data.img) // The server's response is now placed inside your target div
                 $('#comic-title').html(data.title);
-                $('#comic-year').html(data);
+                $('#comic-year').html(data.year);
               },
               error: function()
               {

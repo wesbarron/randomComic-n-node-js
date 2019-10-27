@@ -61,7 +61,7 @@ var newURL = firstURL + randomNum + lastURL;
 
 request(newURL, (error, response, body)=> {
 
-    var ranComicResponse = JSON.parse(body);
+    ranComicResponse = JSON.parse(body);
     ranComicImg = ranComicResponse.img;
     ranComicTitle = ranComicResponse.title;
     ranComicYear = ranComicResponse.year;
@@ -72,7 +72,7 @@ request(newURL, (error, response, body)=> {
 
     //res.send(ranComicImg);
     //res.send(ranComicTitle);
-    res.send(ranComicYear);
+    res.send(ranComicResponse);
 
 
 });
