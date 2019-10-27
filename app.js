@@ -110,7 +110,7 @@ request(newURL, (error, response, body)=> {
     ranComicImg = ranComicResponse.img;
     var ranComicTitle = ranComicResponse.title;
     var ranComicYear = ranComicResponse.year;
-    console.log(ranComicImg);
+    console.log(ranComicTitle + ranComicYear);
 });
 
     //res.redirect('/');
