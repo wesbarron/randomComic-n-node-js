@@ -21,7 +21,7 @@ var newURL;
 var origComicTitle;
 var origComicYear;
 var ranComicResponse;
-var randomPage = app.render("random");
+//var randomPage = app.render("random");
 
 request(url, (error, response, body)=> {
 
