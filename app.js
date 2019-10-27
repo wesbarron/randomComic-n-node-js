@@ -99,7 +99,7 @@ request(url, (error, response, body)=> {
 app.post('/randomComic', function(req, res){
 
    //get random comic
-var randomNum = Math.floor((Math.random() * 1200) + 1);
+var randomNum = Math.floor((Math.random() * 1200));
 var firstURL = 'https://xkcd.com/';
 var lastURL = '/info.0.json';
 var newURL = firstURL + randomNum + lastURL;
